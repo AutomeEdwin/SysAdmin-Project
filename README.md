@@ -29,3 +29,16 @@
 </ol>
 
 ## **Échéances**
+
+## **TODO**
+    -> SSH sur nos VPS
+    -> mettre en place le DNS (résolveur + SOA interne et externe)
+    -> Mettre en place le srv Web Apache
+    -> Mettre en place mail (SMTP & IMAP)
+    -> Mettre en place VoIP
+    -> Rapports échéance 2 (améliorer rapports 1)
+    -> Upgrade schéma (plan addressage, légende, commentaires)
+    
+    BONUS
+    -> DHCP, file sharing
+    -> 
