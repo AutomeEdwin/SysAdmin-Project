@@ -1,6 +1,5 @@
 # SysAdmin-Project
 
-<<<<<<< HEAD
 ##  **Cahier de charges**
 
 ###  1. Contexte
