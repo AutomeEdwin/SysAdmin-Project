@@ -30,6 +30,7 @@ installations de l’entreprise.</li>
     <li>7 mai: VoIP et rapports/délivrables </li>
 </ul>
 
+=====================================================================
 ## **TODO**
     -> SSH sur nos VPS
     -> mettre en place le DNS (résolveur + SOA interne et externe)
