@@ -1,2 +1,2 @@
-[Schéma logique Woodytoys](Schéma logique Woodytoys.PNG).
-[Schéma prototype](schéma prototype.PNG).
+![Schéma logique WoodyToys](schéma_logique_woodytoys.PNG)
+![Schéma prototype](schéma_prototype.PNG)
