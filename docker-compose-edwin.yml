@@ -1,0 +1,27 @@
+services:
+    SOA_ext:
+        build: 
+            context: ./DNS/SOAext
+            dockerfile: Dockerfile
+        networks:
+            local_net:
+                ipv4_address: 192.168.1.2
+        volumes:
+            - ./SOA-ext/named.conf:/etc/bind/named.conf
+            - ./SOA-ext/wt1-5.ephec-ti.be:/etc/bind/wt1-5.ephec-ti.be
+        container_name: SOAext
+
+networks:
+    local:
+        ipam:
+            driver: default
+            config:
+                - subnet: 192.168.0.0/24
+                  gateway: 192.168.0.1
+        
+    dmz: 
+        ipam:
+            driver: default
+            config:
+                - subnet: 192.168.1.0/24
+                  gateway: 192.168.1.1
