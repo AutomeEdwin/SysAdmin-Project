@@ -1,0 +1,16 @@
+$ORIGIN 0.168.192.in-addr.arpa.
+$TTL 604800
+@       IN      SOA     ns.local.wt1-5.ephec-ti.be. e.autome.students.ephec.be. (
+                        1           ; Serial
+                        604800      ; Refresh
+                        86400       ; Retry
+                        2419200     ; Expire
+                        604800 )    ; Negative Cache TTL
+;
+
+@               IN      NS      ns.local.wt1-5.ephec-ti.be.
+
+3               IN      PTR     ns.local.wt1-5.ephec-ti.be.
+
+4               IN      PTR     intranet.local.wt1-5.ephec-ti.be.
+5               IN      PTR     db.local.wt1-5.ephec-ti.be.
