@@ -9,7 +9,7 @@
 <p>Nous devons mettre en place une nouvelle infrastructure d’hébergement des services informatiques pour l’entreprise de jouets artisanaux WoodyToys.</p>
 
 ### 3.Contraintes techniques
-<p>Nous devons prendre en compte une éventuelle fusion de l’entreprise avec une entreprise concurrente à la suite de son rachat.</p>
+<p>Nous devons anticiper une éventuelle fusion de l’entreprise avec une entreprise concurrente à la suite de son rachat.</p>
 
 ### 4. Description des besoins
 <ul>
@@ -23,7 +23,7 @@ vitrine et ERP).</li>
 installations de l’entreprise.</li>
 </ul>
 
-### 5. Organisation du projet
+ ### 5. Organisation du projet
 <ul>
     <li>12 mars: Web, DNS et rapports/délivrables </li>
     <li>26 mars: Mail et rapports/délivrables </li>
