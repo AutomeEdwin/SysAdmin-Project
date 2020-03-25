@@ -11,6 +11,7 @@ services:
         volumes:
             - ./resolv/named.conf:/etc/bind/named.conf
         container_name: resolv
+
     soaint:
         build: 
             context: ./SOAint
@@ -23,6 +24,7 @@ services:
             - ./SOAint/local.wt2-5.ephec-ti.be:/etc/bind/local.wt2-5.ephec-ti.be
             - ./SOAint/0.168.192.in-addr-arpa:/etc/bind/0.168.192.in-addr-arpa
         container_name: soaint
+
     intranet:
         build:
             context: ./Intranet
@@ -33,8 +35,8 @@ services:
             local:
                 ipv4_address: 192.168.0.4
         volumes: 
-            - ./Intranet/intranet.conf:/etc/apache2/sites-available/
-            - ./Intranet/index.php:/var/www/
+            - ./Intranet/intranet.conf:/etc/apache2/sites-available/intranet.conf
+            - ./Intranet/index.php:/var/www/index.php
         container_name: intranet
   
 networks:
