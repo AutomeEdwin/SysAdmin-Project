@@ -4,7 +4,7 @@ RUN apt-get update -y
 RUN apt-get install -y nano curl
 
 COPY index.php /var/www/index.php
-ADD ./sites-available /etc/apache2/
+ADD ./sites-available/ /etc/apache2/sites-available/
  
 RUN cd /etc/apache2/sites-available/ && a2ensite intranet.conf
 RUN service apache2 restart
