@@ -32,7 +32,7 @@ installations de l’entreprise.</li>
 
 =====================================================================
 ## **TODO**
-    -> SSH sur nos VPS
+
     -> mettre en place le DNS (résolveur + SOA interne et externe)
     -> Mettre en place le srv Web Apache
     -> Mettre en place mail (SMTP & IMAP)
@@ -41,7 +41,7 @@ installations de l’entreprise.</li>
     -> Upgrade schéma (plan addressage, légende, commentaires)
     
     BONUS
-    -> DHCP, file sharing
+    -> DHCP, file sharing, ...
 
 ## **Liens**
 - [**Docker Hub**](https://hub.docker.com/repository/docker/automeedwin/sysadmin-project) => Images Docker
