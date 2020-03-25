@@ -33,7 +33,7 @@ services:
             local:
                 ipv4_address: 192.168.0.4
         volumes: 
-            - ./Intranet/sites-available:/etc/apache2/sites-available
+            - ./Intranet/intranet.conf:etc/apache2/sites-available/
             - ./Intranet/index.php:/var/www/
         container_name: intranet
   
