@@ -1,7 +1,7 @@
 FROM romeoz/docker-apache-php
 
 RUN apt-get update -y
-RUN apt-get install -y nano curl
+RUN apt-get install -y nano curl dnsutils net-tools
 
 COPY index.php /var/www/index.php
 COPY intranet.conf /etc/apache2/sites-available/intranet.conf
