@@ -1,0 +1,2 @@
+wt1-5                   IN      NS      ns.wt1-5.ephec-ti.be.
+ns.wt1-5.ephec-ti.be.   IN      A       51.178.40.8
