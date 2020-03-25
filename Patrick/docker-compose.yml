@@ -23,19 +23,19 @@ services:
             - ./SOAint/local.wt2-5.ephec-ti.be:/etc/bind/local.wt2-5.ephec-ti.be
             - ./SOAint/0.168.192.in-addr-arpa:/etc/bind/0.168.192.in-addr-arpa
         container_name: soaint
-#    intranet:
-#        build:
-#            context: ./Intranet
-#            dockerfile: Dockerfile
-#        ports: 
-#            - "80:80"
-#        networks:
-#            local:
-#                ipv4_address: 192.168.0.4
-#        volumes: 
-#            - ./Intranet/sites-available:/etc/apache2/sites-available
-#            - ./Intranet/index.php:/var/www/
-#        container_name: intranet
+    intranet:
+        build:
+            context: ./Intranet
+            dockerfile: Dockerfile
+        ports: 
+            - "80:80"
+        networks:
+            local:
+                ipv4_address: 192.168.0.4
+        volumes: 
+            - ./Intranet/sites-available:/etc/apache2/sites-available
+            - ./Intranet/index.php:/var/www/
+        container_name: intranet
   
 networks:
     local:
