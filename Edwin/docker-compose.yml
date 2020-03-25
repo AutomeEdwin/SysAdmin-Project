@@ -6,9 +6,6 @@ services:
         build: 
             context: ./SOAext
             dockerfile: Dockerfile
-        ports:
-            - "53:53/tcp"
-            - "53:53/udp"
         networks:
             dmz:
                 ipv4_address: 192.168.1.2
