@@ -6,6 +6,5 @@ RUN apt-get install -y nano curl dnsutils net-tools
 COPY index.html /var/www/index.html
 ADD ./sites-available /etc/apache2/
  
-RUN a2ensite portail.conf
-
+RUN cd /etc/apache2/sites-available/ && a2ensite intranet.conf
 RUN service apache2 restart
