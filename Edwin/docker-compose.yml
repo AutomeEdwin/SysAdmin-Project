@@ -1,68 +1,63 @@
-services:
+version: '2'
 
-    resolv:
+services:   
+
+    soaext:
         build: 
-            context: ./DNS/resolv
+            context: ./SOAext
             dockerfile: Dockerfile
         ports:
             - "53:53/tcp"
             - "53:53/udp"
         networks:
-            local_net:
-                ipv4_adress: 192.168.0.2
-        volumes:
-            - ./resolv/named.conf:/etc/bind/named.conf
-        container_name: resolv
-
-    SOAint:
-        build: 
-            context: ./DNS/SOAint
-            dockerfile: Dockerfile
-        #ports: déjà mapper plus haut
-        networks:
-            local_net:
-                ipv4_address: 192.168.0.3
-        volumes:
-            - ./DNS/SOAint/named.conf:/etc/bind/named.conf
-            - ./DNS/SOAint/local.wt2-5.ephec-ti.be:/etc/bind/local.wt2-5.ephec-ti.be
-            - ./DNS/SOAint/0.168.192.in-addr-arpa:/etc/bind/0.168.192.in-addr-arpa
-        container_name: SOAint
-    
-    SOAext:
-        build: 
-            context: ./DNS/SOAext
-            dockerfile: Dockerfile
-        networks:
-            local_net:
+            dmz:
                 ipv4_address: 192.168.1.2
         volumes:
-            - ./SOA-ext/named.conf:/etc/bind/named.conf
-            - ./SOA-ext/wt1-5.ephec-ti.be:/etc/bind/wt1-5.ephec-ti.be
-        container_name: SOAext
-
-    intranet:
-        container_name: site_intranet
+            - ./SOAext/named.conf:/etc/bind/named.conf
+            - ./SOAext/wt1-5.ephec-ti.be:/etc/bind/wt1-5.ephec-ti.be
+        container_name: soaext
 
     portail:
-        container_name: site_portail
+        build:
+            context: ./Portail
+            dockerfile: Dockerfile
+        ports: 
+            - "80:80"
+        networks:
+            dmz:
+                ipv4_address: 192.168.1.4
+        volumes:
+            - ./Portail/sites-available:/etc/apache/sites-available
+            - ./Portail/index/html:/var/www/
+        container_name: portail
 
     b2b:
-        container_name: site_b2b
-    
+        build:
+            context: ./B2B
+            dockerfile: Dockerfile
+        ports: 
+            - "80:80"
+        networks:
+            dmz:
+                ipv4_address: 192.168.1.3
+        volumes: 
+            - ./B2B/sites-available:/etc/apache2/sites-available
+            - ./B2B/index.php:/var/www/
+        container_name: b2b
 
-networks:
-    
+        
+networks: 
     local:
         ipam:
             driver: default
             config:
                 - subnet: 192.168.0.0/24
-                  gateway: 192.168.0.1
+                  gateway:  192.168.0.1
 
     dmz: 
         ipam:
             driver: default
             config:
                 - subnet: 192.168.1.0/24
-                  gateway: 192.168.1.1
+                  gateway:  192.168.1.1
     
