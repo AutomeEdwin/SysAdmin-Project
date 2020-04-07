@@ -17,7 +17,7 @@ services:
             - ./SOAext/wt1-5.ephec-ti.be:/etc/bind/wt1-5.ephec-ti.be
         container_name: soaext
 
-    sitesDMZ:
+    sitesdmz:
         build:
             context: ./Sites_DMZ
             dockerfile: Dockerfile
