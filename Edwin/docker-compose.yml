@@ -17,32 +17,20 @@ services:
             - ./SOAext/wt1-5.ephec-ti.be:/etc/bind/wt1-5.ephec-ti.be
         container_name: soaext
 
-    portail:
+    sitesDMZ:
         build:
-            context: ./Portail
+            context: ./Sites_DMZ
             dockerfile: Dockerfile
         ports:
-           - "80:80"
-           - "443:443"
-        networks:
-            dmz:
-                ipv4_address: 192.168.1.4
-        volumes:
-            - ./Portail/sites-available/:/etc/apache2/sites-available/
-            - ./Portail/index.html:/var/www/index.html
-        container_name: portail
-
-    b2b:
-        build:
-            context: ./B2B
-            dockerfile: Dockerfile
+                - "80:80"
+                - "443:443"
         networks:
             dmz:
                 ipv4_address: 192.168.1.3
         volumes: 
-            - ./B2B/sites-available/:/etc/apache2/sites-available/
-            - ./B2B/index.php:/var/www/index.php
-        container_name: b2b
+            - ./Sites_DMZ/sites-available/:/etc/apache2/sites-available/
+            - ./Sites_DMZ/www/:/var/www/
+        container_name: sitesdmz
 
         
 networks:
