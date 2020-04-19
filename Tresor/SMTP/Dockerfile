@@ -1,1 +1,0 @@
-FROM tvial/docker-mailserver
