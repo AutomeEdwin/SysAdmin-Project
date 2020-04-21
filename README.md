@@ -33,12 +33,12 @@ installations de l’entreprise.</li>
 =====================================================================
 ## **TODO**
 
-    -> mettre en place le DNS (résolveur + SOA interne et externe)
-    -> Mettre en place le srv Web Apache
-    -> Mettre en place mail (SMTP & IMAP)
-    -> Mettre en place VoIP
-    -> Rapports échéance 2 (améliorer rapports 1)
-    -> Upgrade schéma (plan addressage, légende, commentaires)
+    [X] - mettre en place le DNS (résolveur + SOA interne et externe)
+    [X] - Mettre en place le srv Web Apache
+    [X] - Mettre en place mail (SMTP & IMAP)
+    [] - Mettre en place VoIP
+    [X] - Rapports échéance 2 (améliorer rapports 1)
+    [X] - Upgrade schéma (plan addressage, légende, commentaires)
     
     BONUS
     -> DHCP, file sharing, ...
