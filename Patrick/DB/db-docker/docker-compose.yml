@@ -2,8 +2,7 @@
 version: '3'
 
 services:
-
-  mysql-development:
+ mysql-development:
     image: mysql:8.0.17
     environment:
       MYSQL_ROOT_PASSWORD: helloworld
