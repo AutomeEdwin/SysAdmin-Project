@@ -37,6 +37,21 @@ services:
             - ./Intranet/index.php:/var/www/index.php
         container_name: intranet
   
+    db:
+        build: 
+            context: ./DB
+            dockerfile: Dockerfile
+        command: --default-authentification-plugin=mysql_native_password
+        ports:  
+            - "3306:3306"
+        networks:
+            local:
+                ipv4_address: 192.168.0.5
+        environment: 
+            MYSQL_ROOT_PASSWORD: sqlpasswd
+        container_name: db
+
+
 networks:
     local:
         ipam:

@@ -1,7 +1,25 @@
+<?php
+    try{
+        $db = new PDO('mysql:host=localhost; dbname=jouets; charset=utf-8', 'admin', 'sqlpasswd');
+    } catch (Exception $e){
+        die('Erreur : ' . $e->getMessage());
+    }
+?>
+
 -----------------
 <p>Bienvenue sur le site <b>B2B de WoodyToys</b></p>
 <?php 
-echo '----------PHP----------'."<br><br>";
-echo 'Version courante de PHP : '.'<b><span style="color:blue">' . Phpversion().'</b></span><br><br>';
-echo '----------PHP----------';
+    $reponse = $db->query('SELECT * FROM jouets');
+    
+    while($data = $reponse->fetch()){
+?>
+<p>
+<strong>Jouet : </strong> <?php echo $data['jouetNom']; ?><br> 
+<strong>Prix : </strong> <?php echo $data['jouetPrix']; ?><br>
+</p>    
+
+
+<?php
+    };
+    $reponse->closeCursor();
  ?>
