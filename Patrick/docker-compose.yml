@@ -47,6 +47,8 @@ services:
         networks:
             local:
                 ipv4_address: 192.168.0.5
+        volumes:
+                - ./Db/sql/:/data/
         environment: 
             MYSQL_ROOT_PASSWORD: sqlpasswd
         container_name: db
