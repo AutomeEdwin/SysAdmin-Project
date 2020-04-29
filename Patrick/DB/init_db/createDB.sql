@@ -10,7 +10,7 @@ CREATE TABLE jouets (
     jouetNom CHAR(100) NOT NULL,
     jouetPrix DECIMAL(3,3), 
     CONSTRAINT pk_jouet PRIMARY KEY(id_jouet)
-);
+) CHARACTER SET utf8;
 
 INSERT INTO jouets (jouetNom, jouetPrix)
 VALUES ('Baboushka', 10),
