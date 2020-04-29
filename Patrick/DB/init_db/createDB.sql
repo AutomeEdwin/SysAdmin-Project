@@ -7,7 +7,7 @@ CREATE DATABASE wtDB;
 
 CREATE TABLE jouets (
     id_jouet INTEGER NOT NULL AUTO_INCREMENT,
-    jouetNom CHAR(100) NOT NULL,
+    jouetNom CHAR(50) NOT NULL,
     jouetPrix DECIMAL(3,3), 
     CONSTRAINT pk_jouet PRIMARY KEY(id_jouet)
 ) CHARACTER SET utf8;

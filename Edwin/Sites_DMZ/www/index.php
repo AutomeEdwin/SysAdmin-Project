@@ -1,6 +1,6 @@
 <?php
     try{
-        $db = new PDO('mysql:host=localhost; dbname=jouets', 'admin', 'sqlpasswd');
+        $db = new PDO('mysql:host=localhost; dbname=jouets; charset=UTF-8', 'admin', 'sqlpasswd');
     } catch (Exception $e){
         die('Erreur : ' . $e->getMessage());
     }
