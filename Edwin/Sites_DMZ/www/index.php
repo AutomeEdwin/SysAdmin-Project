@@ -1,6 +1,6 @@
 <?php
     try{
-        $db = new PDO('mysql:host=localhost; dbname=jouets; charset=UTF-8', 'admin', 'sqlpasswd');
+        $db = new PDO('mysql:host=localhost; dbname=jouets; charset=utf-8', 'admin', 'sqlpasswd');
     } catch (Exception $e){
         die('Erreur : ' . $e->getMessage());
     }
@@ -17,7 +17,6 @@
 <strong>Jouet : </strong> <?php echo $data['jouetNom']; ?><br> 
 <strong>Prix : </strong> <?php echo $data['jouetPrix']; ?><br>
 </p>    
-
 
 <?php
     };
