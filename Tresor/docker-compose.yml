@@ -1,6 +1,4 @@
 services:
-    smtp:
-    imap:
     voip:
         image: wt5_voip:latest
         container_name: Voip
@@ -24,17 +22,8 @@ services:
           -./asterisk/loggers.conf:/etc/asterisk/logger.conf
           -./asterisk/users.conf:/etc/asterisk/users.conf
           -./asterisk/voicemail.conf:/etc/asterisk/voicemail.conf
-	
-		  
+	  
 networks:
-    
-    local:
-        ipam:
-            driver: default
-            config:
-                - subnet: 192.168.0.0/24
-                  gateway: 192.168.0.1
-
     dmz: 
         ipam:
             driver: default
