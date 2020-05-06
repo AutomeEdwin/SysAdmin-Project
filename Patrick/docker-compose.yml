@@ -41,7 +41,7 @@ services:
         build: 
             context: ./DB
             dockerfile: Dockerfile
-        command: --default-authentification-plugin=mysql_native_password
+        command: --default-authentication-plugin=mysql_native_password
         ports:  
             - "4200:4200"
         networks:
