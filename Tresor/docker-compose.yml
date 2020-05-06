@@ -1,7 +1,28 @@
 services:
     smtp:
     imap:
-    voip:    
+    voip:
+	image: wt5_voip:latest
+	container_name: Voip
+	ports:
+	  -"5060:5060/tcp"
+	  -"5060:5060/udp"
+	  -"16384:16384/udp"
+	  -"16385:16385/udp"
+	  -"16386:16386/udp"
+	  -"16387:16387/udp"
+	  -"16387:16387/udp"
+	  -"16388:16388/udp"
+	  -"16389:16389/udp"
+	  -"16390:16390/udp"
+	volumes:
+	  -./asterisk/extensions.conf:/etc/asterisk/extensions.conf
+	  -./asterisk/sip.conf:/etc/asterisk/sip.conf
+	  -./asterisk/loggers.conf:/etc/asterisk/logger.conf
+	  -./asterisk/users.conf:/etc/asterisk/users.conf
+	  -./asterisk/voicemail.conf:/etc/asterisk/voicemail.conf
+	
+		  
 
 networks:
     
