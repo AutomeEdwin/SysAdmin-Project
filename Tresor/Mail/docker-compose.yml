@@ -1,10 +1,10 @@
-version: '2'
+version: '3'
 services:
   mail:
     image: tvial/docker-mailserver:latest
-    hostname: ${HOSTNAME}
-    domainname: ${DOMAINNAME}
-    container_name: ${CONTAINER_NAME}
+    hostname: mail
+    domainname: wt1-5.ephec-ti.be
+    container_name: mail
     ports:
     - "25:25"
     - "143:143"
