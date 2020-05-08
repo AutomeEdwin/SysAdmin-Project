@@ -8,6 +8,8 @@ GRANT ALL PRIVILEGES ON wtDB.* TO 'dbAdmin'@'localhost';
 GRANT ALL PRIVILEGES ON wtDB.* TO 'dbAdmin'@'192.168.0.5';
 GRANT ALL PRIVILEGES ON wtDB.* TO 'dbAdmin'@'192.168.0.5';
 
+USE wtDB;
+
 CREATE TABLE jouets (
     id_jouet INTEGER NOT NULL AUTO_INCREMENT,
     jouetNom CHAR(50) NOT NULL,
