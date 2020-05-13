@@ -1,24 +1,20 @@
 <?php
-    try{
-        $db = new PDO('mysql:host=admin; dbname=wtDB; charset=utf8', 'admin', '');
-    } catch (Exception $e){
-        die('Erreur : ' . $e->getMessage());
-    }
+     $db = mysqli_connect('51.178.41.110:4200', 'dbAdmin', 'sqlpasswd', 'wtDB');
 ?>
-
+<html>
+<head>
+</head>
+<body>
 -----------------
 <p>Bienvenue sur le site <b>B2B de WoodyToys</b></p>
 
 <?php
-    $reponse = $db->query('SELECT * FROM jouets');
-    while($data = $reponse->fetch()){
-?>
+    $query = "SELECT * FROM jouets";
+    $result = mysqli_query($db, $query);
 
-<p>
-<strong>Jouet : </strong> <?php echo $data['jouetNom']; ?><br>
-<strong>Prix : </strong> <?php echo $data['jouetPrix']; ?><br>
-</p>
-
-<?php
+    while($data = mysli_fetch_array($result)){
+      echo $data['jouetNom'] . ': ' . $data['jouetPrix'] . '<br/>';
     };
  ?>
+</body>
+</html>
