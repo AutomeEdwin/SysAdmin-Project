@@ -1,6 +1,6 @@
 <?php
     try{
-        $db = new PDO('mysql:host=admin; dbname=wtDB; charset=utf8', 'admin', '');
+        $db = new PDO('mysql:host=admin; dbname=wtDB; charset=utf8', 'admin', 'sqlpasswd');
     } catch (Exception $e){
         die('Erreur : ' . $e->getMessage());
     }
