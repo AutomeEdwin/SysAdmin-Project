@@ -11,6 +11,7 @@ services:
         volumes:
             - ./resolv/named.conf:/etc/bind/named.conf
         container_name: resolv
+        restart: always
 
     soaint:
         build: 
@@ -24,7 +25,7 @@ services:
             - ./SOAint/local.wt2-5.ephec-ti.be:/etc/bind/local.wt2-5.ephec-ti.be
             - ./SOAint/0.168.192.in-addr-arpa:/etc/bind/0.168.192.in-addr-arpa
         container_name: soaint
-
+        restart: always
     intranet:
         build:
             context: ./Intranet
@@ -36,7 +37,7 @@ services:
             - ./Intranet/intranet.conf:/etc/apache2/sites-available/intranet.conf
             - ./Intranet/index.php:/var/www/index.php
         container_name: intranet
-  
+        restart: always
     db:
         build: 
             context: ./DB
@@ -50,7 +51,7 @@ services:
         environment: 
             MYSQL_ROOT_PASSWORD: sqlpasswd
         container_name: db
-
+        restart: always
 networks:
     local:
         ipam:
